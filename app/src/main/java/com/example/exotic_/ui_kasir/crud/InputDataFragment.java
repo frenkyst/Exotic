@@ -25,6 +25,7 @@ public class InputDataFragment extends Fragment {
 
         NamaBarang.setText("tes");
         JenisBarang.setText("a");
+        HargaBarang.setText("000");
 
 
         return root;
