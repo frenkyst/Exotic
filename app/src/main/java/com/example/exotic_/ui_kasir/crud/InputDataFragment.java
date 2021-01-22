@@ -23,6 +23,9 @@ public class InputDataFragment extends Fragment {
         JenisBarang = root.findViewById(R.id.txJenis);
         HargaBarang = root.findViewById(R.id.txHarga);
 
+        NamaBarang.setText("tes");
+        JenisBarang.setText("a");
+
 
         return root;
     }
