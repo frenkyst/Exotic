@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "793261522120",
+    "firebase_url": "https://exotic-60f24-default-rtdb.firebaseio.com",
+    "project_id": "exotic-60f24",
+    "storage_bucket": "exotic-60f24.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793261522120:android:d36c23964d6e14821639fd",
+        "android_client_info": {
+          "package_name": "com.example.exotic_"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "793261522120-db2p89h4ehqf71r2hh6vqfoofpdu6ah6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.exotic_",
+            "certificate_hash": "3f96febf422ea31332230402ebf875f81bc2e56c"
+          }
+        },
+        {
+          "client_id": "793261522120-h8rje49dck7ih15offj9er396evoeg4k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBOTNZ-33CM83KBVhsXfPF6yNC_o9LzBE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "793261522120-h8rje49dck7ih15offj9er396evoeg4k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
