@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="700dp"
+    android:orientation="vertical"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+        android:background="@drawable/header"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Input Barang"
+            android:textSize="40dp"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+
+
+        <ImageView
+            android:id="@+id/image_barang_K"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/spk3"
+            android:layout_marginTop="25dp"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txHargaBarangK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Harga Barang"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+        <TextView
+            android:id="@+id/txNJumlahBarangK"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:text="Jumlah"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="20dp">
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/txNamaBarangK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:text="Nama Barang"
+        android:textStyle="bold"
+        android:textSize="15sp"/>
+
+    <Button
+        android:id="@+id/txMasukanKeranjang"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:backgroundTint="#a2d0c1"
+        android:text="Tambah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+
+</LinearLayout>

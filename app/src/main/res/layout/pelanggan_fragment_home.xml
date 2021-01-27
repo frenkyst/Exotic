@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,6 +10,12 @@
     android:id="@+id/admin_ui_fragment_home"
     tools:context=".ui_pelanggan.home.HomeFragment">
     <!-- navigasi bar-->
+
+
+
+
+
+
     <androidx.appcompat.widget.Toolbar
         android:background="@color/green"
         android:layout_width="match_parent"
@@ -29,16 +36,17 @@
             <RelativeLayout
                 android:layout_width="10dp"
                 android:layout_height="match_parent"/>
-            <Button
-                android:layout_weight="1"
-                android:gravity="left|center_vertical"
-                android:drawableLeft="@drawable/ic_search"
-                android:textColor="@color/black"
-                android:backgroundTint="@color/white"
-                android:textAllCaps="false"
-                android:text="Pencarian"
+
+            <SearchView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:drawableLeft="@drawable/ic_search"
+                android:gravity="left|center_vertical"
+                android:queryHint="Pencarian"
+                android:iconifiedByDefault="false">
+            </SearchView>
             <RelativeLayout
                 android:layout_width="10dp"
                 android:layout_height="match_parent"/>
@@ -62,15 +70,15 @@
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 
-<ScrollView
-    android:layout_weight="1"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+        <ScrollView
+            android:paddingBottom="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
     <!-- header-->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <LinearLayout
             android:background="@drawable/header"
             android:layout_width="match_parent"
@@ -149,6 +157,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <LinearLayout
+                    android:id="@+id/txLHU"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:clickable="true"
                     android:background="@drawable/card_button"
@@ -180,6 +189,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <LinearLayout
+                    android:id="@+id/txLPower"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:clickable="true"
                     android:background="@drawable/card_button"
@@ -211,6 +221,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <LinearLayout
+                    android:id="@+id/txLSplit"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:clickable="true"
                     android:background="@drawable/card_button"
@@ -242,6 +253,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <LinearLayout
+                    android:id="@+id/txLSubwoofer"
                     android:foreground="?android:attr/selectableItemBackground"
                     android:clickable="true"
                     android:background="@drawable/card_button"
@@ -290,6 +302,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <Button
+                    android:id="@+id/txBViewAll"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:backgroundTint="#f37121"
@@ -298,239 +311,11 @@
                     android:layout_height="wrap_content"/>
             </LinearLayout>
 
-            <HorizontalScrollView
-                android:paddingLeft="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvhorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <!--card produk-->
-                    <LinearLayout
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:clickable="true"
-                        android:padding="4dp"
-                        android:background="@drawable/card_produk"
-                        android:orientation="vertical"
-                        android:layout_width="140dp"
-                        android:layout_height="wrap_content">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <androidx.cardview.widget.CardView
-                                app:cardCornerRadius="5dp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="90dp"
-                                    android:cropToPadding="false"
-                                    android:src="@drawable/hu2" />
-                            </androidx.cardview.widget.CardView>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_marginTop="5dp"
-                            android:orientation="vertical"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-                            <TextView
-                                android:text="Hu Orca Jazz"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
-                            <TextView
-                                android:textStyle="bold"
-                                android:text="Rp 2.500.000"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                    <RelativeLayout
-                        android:layout_width="10dp"
-                        android:layout_height="match_parent"/>
-                    <!--card produk-->
-                    <LinearLayout
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:clickable="true"
-                        android:padding="4dp"
-                        android:background="@drawable/card_produk"
-                        android:orientation="vertical"
-                        android:layout_width="140dp"
-                        android:layout_height="wrap_content">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <androidx.cardview.widget.CardView
-                                app:cardCornerRadius="5dp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="90dp"
-                                    android:cropToPadding="false"
-                                    android:src="@drawable/spk1" />
-                            </androidx.cardview.widget.CardView>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_marginTop="5dp"
-                            android:orientation="vertical"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-                            <TextView
-                                android:text="Speaker Split Venom"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
-                            <TextView
-                                android:textStyle="bold"
-                                android:text="Rp 500.000"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                    <RelativeLayout
-                        android:layout_width="10dp"
-                        android:layout_height="match_parent"/>
-                    <!--card produk-->
-                    <LinearLayout
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:clickable="true"
-                        android:padding="4dp"
-                        android:background="@drawable/card_produk"
-                        android:orientation="vertical"
-                        android:layout_width="140dp"
-                        android:layout_height="wrap_content">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <androidx.cardview.widget.CardView
-                                app:cardCornerRadius="5dp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="90dp"
-                                    android:cropToPadding="false"
-                                    android:src="@drawable/sub1" />
-                            </androidx.cardview.widget.CardView>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_marginTop="5dp"
-                            android:orientation="vertical"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-                            <TextView
-                                android:text="Subwoofer 12' Sony"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
-                            <TextView
-                                android:textStyle="bold"
-                                android:text="Rp 1.500.000"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                    <RelativeLayout
-                        android:layout_width="10dp"
-                        android:layout_height="match_parent"/>
-                    <!--card produk-->
-                    <LinearLayout
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:clickable="true"
-                        android:padding="4dp"
-                        android:background="@drawable/card_produk"
-                        android:orientation="vertical"
-                        android:layout_width="140dp"
-                        android:layout_height="wrap_content">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <androidx.cardview.widget.CardView
-                                app:cardCornerRadius="5dp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="90dp"
-                                    android:cropToPadding="false"
-                                    android:src="@drawable/alr1" />
-                            </androidx.cardview.widget.CardView>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_marginTop="5dp"
-                            android:orientation="vertical"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-                            <TextView
-                                android:text="Alarm Paket Skeleton"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
-                            <TextView
-                                android:textStyle="bold"
-                                android:text="Rp 600.000"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                    <RelativeLayout
-                        android:layout_width="10dp"
-                        android:layout_height="match_parent"/>
-                    <!--card produk-->
-                    <LinearLayout
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:clickable="true"
-                        android:padding="4dp"
-                        android:background="@drawable/card_produk"
-                        android:orientation="vertical"
-                        android:layout_width="140dp"
-                        android:layout_height="wrap_content">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <androidx.cardview.widget.CardView
-                                app:cardCornerRadius="5dp"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <ImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="90dp"
-                                    android:cropToPadding="false"
-                                    android:src="@drawable/hu2" />
-                            </androidx.cardview.widget.CardView>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_marginTop="5dp"
-                            android:orientation="vertical"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-                            <TextView
-                                android:text="Paket Audio Agya"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
-                            <TextView
-                                android:textStyle="bold"
-                                android:text="Rp 2.200.000"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"/>
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
-            </HorizontalScrollView>
         </LinearLayout>
 
         <!--Produk Variasi-->
@@ -549,10 +334,10 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_product"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="2100dp"/>
             </LinearLayout>
 
         </LinearLayout>
     </LinearLayout>
-</ScrollView>
+    </ScrollView>
 </LinearLayout>

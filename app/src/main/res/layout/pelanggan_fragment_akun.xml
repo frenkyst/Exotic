@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".ui_pelanggan.akun.AkunFragment">
 
@@ -17,12 +18,14 @@
 
 
         <ImageView
+            android:id="@+id/image_view_akun"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="20dp"
             android:src="@drawable/account_box_24" />
 
         <TextView
+            android:id="@+id/txnama_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -64,14 +67,15 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Username"
-                        android:textStyle="bold"/>
+                        android:text="Nama"
+                        android:textStyle="bold" />
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/txNamaPengguna"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="username"
-                        android:textStyle="bold"/>
+                        android:textSize="14dp"
+                        android:hint="Masukan Nama"/>
 
                 </LinearLayout>
 
@@ -98,15 +102,17 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Telephone"
+                        android:text="No Telphone"
                         style="TextBlackTitle"
                         android:textStyle="bold"/>
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/txNoHp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="phone"
-                        style="TextDescription"/>
+                        android:hint="Masukan No"
+                        android:inputType="number"
+                        android:textSize="14dp" />
 
                 </LinearLayout>
 
@@ -137,10 +143,13 @@
                         style="TextBlackTitle"
                         android:textStyle="bold"/>
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/txEmail"
+                        android:enabled="false"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="email" />
+                        android:textSize="14dp"
+                        android:hint="Masukan Email"/>
 
                 </LinearLayout>
 
@@ -167,19 +176,39 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Location"
+                        android:text="Alamat"
                         android:textStyle="bold"/>
 
-                    <TextView
+                    <EditText
+                        android:id="@+id/txAlamatPembeli"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="address"/>
+                        android:textSize="14dp"
+                        android:hint="Masukan Alamat"/>
+
+
 
                 </LinearLayout>
 
             </LinearLayout>
-
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"/>
+            <Button
+                android:id="@+id/txInputDataAkun"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:backgroundTint="#a2d0c1"
+                android:text="Input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="65dp"/>
         </LinearLayout>
+
+
     </ScrollView>
 
 </LinearLayout>

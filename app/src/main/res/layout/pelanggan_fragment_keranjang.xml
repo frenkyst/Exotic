@@ -5,21 +5,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui_pelanggan.MainActivity">
 
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    <include layout="@layout/daftar_barang"/>
+    <LinearLayout
+
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="140dp">
+
+        <include layout="@layout/daftar_barang" />
 
 
-</LinearLayout>
+    </LinearLayout>
 
     <com.google.android.material.card.MaterialCardView
         android:layout_gravity="bottom"
-        android:layout_margin="16dp"
+        android:layout_marginBottom="70dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         app:cardCornerRadius="8dp"
         android:elevation="16dp"
         app:cardBackgroundColor="#11698e"

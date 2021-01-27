@@ -7,5 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".ui_kasir.crud.InputDataFragment" >
 
-    <include layout="@layout/kasir_crud_kasir"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="70dp">
+
+        <include layout="@layout/kasir_crud_kasir"/>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

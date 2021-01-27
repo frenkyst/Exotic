@@ -176,7 +176,7 @@ public class LoginActivity extends AppCompatActivity {
             final String uid = user.getUid();
             final String image = user.getPhotoUrl().toString();
 
-            database = FirebaseDatabase.getInstance().getReference().child("Root").child("User").child(uid);
+            database = FirebaseDatabase.getInstance().getReference().child("Akun").child(uid);
             database.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -252,8 +252,7 @@ public class LoginActivity extends AppCompatActivity {
      */
     private void submit(Akun userman, String uid) {
         database = FirebaseDatabase.getInstance().getReference();
-        database.child("Root")
-                .child("User")
+        database.child("Akun")
                 .child(uid)
                 .setValue(userman);
 
