@@ -39,7 +39,7 @@
             android:id="@+id/image_barang_K"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:src="@drawable/spk3"
+            android:src="@drawable/ic_x_24"
             android:layout_marginTop="25dp"/>
 
 
@@ -55,7 +55,7 @@
             android:paddingLeft="10dp"
             android:text="Harga Barang"
             android:textStyle="bold"
-            android:textSize="15sp"/>
+            android:textSize="25dp"/>
         <TextView
             android:id="@+id/txNJumlahBarangK"
             android:layout_weight="1"
@@ -65,7 +65,7 @@
             android:paddingRight="10dp"
             android:text="Jumlah"
             android:textStyle="bold"
-            android:textSize="15sp"/>
+            android:textSize="20dp"/>
     </LinearLayout>
 
     <RelativeLayout
@@ -80,16 +80,21 @@
         android:paddingLeft="10dp"
         android:text="Nama Barang"
         android:textStyle="bold"
-        android:textSize="15sp"/>
+        android:textSize="20dp"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"/>
 
     <Button
         android:id="@+id/txMasukanKeranjang"
         android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:backgroundTint="#a2d0c1"
+        android:textColor="@color/black"
+        android:backgroundTint="#ff884b"
         android:text="Tambah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_gravity="center"/>
 
 

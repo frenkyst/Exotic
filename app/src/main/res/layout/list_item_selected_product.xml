@@ -68,6 +68,7 @@
                         android:layout_height="24dp">
 
                         <ImageView
+                            android:id="@+id/kurangi"
                             android:src="@drawable/min_24"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
@@ -92,6 +93,7 @@
                         android:layout_height="24dp">
 
                         <ImageView
+                            android:id="@+id/tambahi"
                             android:src="@drawable/plus_24"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
@@ -104,7 +106,7 @@
 
             <RelativeLayout
                 android:gravity="center"
-                android:id="@+id/product_more"
+                android:id="@+id/hapus_keranjang"
                 android:layout_weight="0.1"
                 android:layout_width="0dp"
                 android:padding="8dp"

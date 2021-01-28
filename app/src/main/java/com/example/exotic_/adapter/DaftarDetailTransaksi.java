@@ -1,5 +1,6 @@
 package com.example.exotic_.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -13,66 +14,64 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.exotic_.R;
-import com.example.exotic_.model.Barang;
+import com.example.exotic_.model.Keranjang;
 import com.squareup.picasso.Picasso;
 
-import java.text.DecimalFormat;
 import java.util.List;
 
-public class DaftarBarang extends RecyclerView.Adapter<DaftarBarang.BarangViewHolder> {
+public class DaftarDetailTransaksi extends RecyclerView.Adapter<DaftarDetailTransaksi.TransaksiViewHolder> {
     private Context mContext;
-    private List<Barang> Barangs;
+    private List<Keranjang> Keranjangs;
     private OnItemClickListener mListener;
 
-
-    public DaftarBarang(Context context, List<Barang> barang) {
+    public DaftarDetailTransaksi(Context context, List<Keranjang> transaksi) {
         mContext = context;
-        Barangs = barang;
+        Keranjangs = transaksi;
     }
 
     @Override
-    public BarangViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(mContext).inflate(R.layout.list_item_product, parent, false);
-        return new DaftarBarang.BarangViewHolder(v);
+    public TransaksiViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(mContext).inflate(R.layout.list_item_selected_product, parent, false);
+        return new DaftarDetailTransaksi.TransaksiViewHolder(v);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
-    public void onBindViewHolder(BarangViewHolder holder, int position) {
-        Barang uploadCurrent = Barangs.get(position);
+    public void onBindViewHolder(TransaksiViewHolder holder, int position) {
+        Keranjang uploadCurrent = Keranjangs.get(position);
         holder.NamaBarang.setText(uploadCurrent.getNamaBarang());
-
-        DecimalFormat decim = new DecimalFormat("#,###");
-        //tvtotaltransaksi.setText("Rp. "+decim.format(Integer.parseInt(totaltransaksi)));
-        String HargaBarang = null;
-        if(uploadCurrent.getHargaBarang()!=null){
-            HargaBarang = decim.format(Integer.parseInt(uploadCurrent.getHargaBarang()));
-        }
-        holder.HargaBarang.setText("Rp. "+HargaBarang+",00");
+        holder.HargaBarang.setText(uploadCurrent.getHargaBarang());
+        holder.JumlahBarang.setText(uploadCurrent.getJumlahBarang());
+//        DecimalFormat decim = new DecimalFormat("#,###");
+//        holder.TotalHarga.setText("Rp. "+decim.format(Integer.parseInt(uploadCurrent.getTotalBayar()))+",00");
+//        holder.TotalHarga.setText(uploadCurrent.getTotalBayar());
         Picasso.get()
                 .load(uploadCurrent.getGambarBarang())
                 .placeholder(R.drawable.spk1)
                 .fit()
                 .centerCrop()
                 .into(holder.GambarBarang);
+
     }
 
     @Override
     public int getItemCount() {
-        return Barangs.size();
+        return Keranjangs.size();
     }
 
-    public class BarangViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,
+    public class TransaksiViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,
             View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
-        public TextView NamaBarang,HargaBarang;
+        public TextView NamaBarang,HargaBarang,JumlahBarang;
         public ImageView GambarBarang;
 
-        public BarangViewHolder(View itemView) {
+        public TransaksiViewHolder(View itemView) {
             super(itemView);
 
             NamaBarang = itemView.findViewById(R.id.product_name);
             HargaBarang = itemView.findViewById(R.id.product_price);
-
+            JumlahBarang = itemView.findViewById(R.id.product_selectedQuantity);
             GambarBarang = itemView.findViewById(R.id.product_image);
+//            TotalHarga = itemView.findViewById(R.id.total_bayar);
 
             itemView.setOnClickListener(this);
             itemView.setOnCreateContextMenuListener(this);

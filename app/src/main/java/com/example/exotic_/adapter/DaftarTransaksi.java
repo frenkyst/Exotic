@@ -1,5 +1,6 @@
 package com.example.exotic_.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -9,70 +10,70 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.exotic_.R;
-import com.example.exotic_.model.Barang;
+import com.example.exotic_.model.Transaksi;
 import com.squareup.picasso.Picasso;
 
 import java.text.DecimalFormat;
 import java.util.List;
 
-public class DaftarBarang extends RecyclerView.Adapter<DaftarBarang.BarangViewHolder> {
+public class DaftarTransaksi extends RecyclerView.Adapter<DaftarTransaksi.TransaksiViewHolder> {
     private Context mContext;
-    private List<Barang> Barangs;
+    private List<Transaksi> Transaksis;
     private OnItemClickListener mListener;
 
-
-    public DaftarBarang(Context context, List<Barang> barang) {
+    public DaftarTransaksi(Context context, List<Transaksi> transaksi) {
         mContext = context;
-        Barangs = barang;
+        Transaksis = transaksi;
     }
 
     @Override
-    public BarangViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(mContext).inflate(R.layout.list_item_product, parent, false);
-        return new DaftarBarang.BarangViewHolder(v);
+    public TransaksiViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(mContext).inflate(R.layout.list_item_transaksi, parent, false);
+        return new DaftarTransaksi.TransaksiViewHolder(v);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
-    public void onBindViewHolder(BarangViewHolder holder, int position) {
-        Barang uploadCurrent = Barangs.get(position);
-        holder.NamaBarang.setText(uploadCurrent.getNamaBarang());
-
-        DecimalFormat decim = new DecimalFormat("#,###");
-        //tvtotaltransaksi.setText("Rp. "+decim.format(Integer.parseInt(totaltransaksi)));
-        String HargaBarang = null;
-        if(uploadCurrent.getHargaBarang()!=null){
-            HargaBarang = decim.format(Integer.parseInt(uploadCurrent.getHargaBarang()));
-        }
-        holder.HargaBarang.setText("Rp. "+HargaBarang+",00");
+    public void onBindViewHolder(TransaksiViewHolder holder, int position) {
+        Transaksi uploadCurrent = Transaksis.get(position);
+        holder.NamaPembeli.setText(uploadCurrent.getNamaPelanggan());
+        holder.NoTelepon.setText(uploadCurrent.getNohp());
+        holder.AlamatPembeli.setText(uploadCurrent.getAlamatPelanggan());
+//        DecimalFormat decim = new DecimalFormat("#,###");
+//        holder.TotalHarga.setText("Rp. "+decim.format(Integer.parseInt(uploadCurrent.getTotalBayar()))+",00");
+        holder.TotalHarga.setText(uploadCurrent.getTotalBayar());
         Picasso.get()
-                .load(uploadCurrent.getGambarBarang())
+                .load(uploadCurrent.getGambarAkun())
                 .placeholder(R.drawable.spk1)
                 .fit()
                 .centerCrop()
-                .into(holder.GambarBarang);
+                .into(holder.GambarAkun);
+
     }
 
     @Override
     public int getItemCount() {
-        return Barangs.size();
+        return Transaksis.size();
     }
 
-    public class BarangViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,
+    public class TransaksiViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,
             View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
-        public TextView NamaBarang,HargaBarang;
-        public ImageView GambarBarang;
+        public TextView NamaPembeli,NoTelepon,AlamatPembeli,TotalHarga;
+        public ImageView GambarAkun;
 
-        public BarangViewHolder(View itemView) {
+        public TransaksiViewHolder(View itemView) {
             super(itemView);
 
-            NamaBarang = itemView.findViewById(R.id.product_name);
-            HargaBarang = itemView.findViewById(R.id.product_price);
-
-            GambarBarang = itemView.findViewById(R.id.product_image);
+            NamaPembeli = itemView.findViewById(R.id.product_name);
+            NoTelepon = itemView.findViewById(R.id.notel);
+            AlamatPembeli = itemView.findViewById(R.id.alamat);
+            GambarAkun = itemView.findViewById(R.id.product_image);
+            TotalHarga = itemView.findViewById(R.id.total_bayar);
 
             itemView.setOnClickListener(this);
             itemView.setOnCreateContextMenuListener(this);

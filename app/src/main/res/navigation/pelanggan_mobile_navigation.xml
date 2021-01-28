@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.example.exotic_.ui_pelanggan.keranjang.KeranjangFragment"
+        android:name="com.example.exotic_.ui_pelanggan.keranjang.TransaksiFragment"
         android:label="Keranjang"
         tools:layout="@layout/pelanggan_fragment_keranjang" />
 

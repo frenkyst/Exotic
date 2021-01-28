@@ -35,7 +35,7 @@ import java.util.List;
 
 public class HomeFragment extends Fragment implements DaftarBarang.OnItemClickListener, DaftarAksesoris.OnItemClickListener {
 
-    Button ButtonViewAll;
+    Button ButtonViewAll,Keranjang;
     LinearLayout LayaoutHU,LayaoutPower,LayaoutSplit,LayaoutSubwoofer;
     private RecyclerView mRecyclerView;
     private DaftarBarang Adapter;
@@ -177,6 +177,15 @@ public class HomeFragment extends Fragment implements DaftarBarang.OnItemClickLi
             }
         });
 
+        Keranjang = root.findViewById(R.id.troli);
+        Keranjang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AppCompatActivity activity = (AppCompatActivity) getContext();
+                Fragment myFragment = new com.example.exotic_.ui_pelanggan.home.TroliFragment();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, myFragment).addToBackStack(null).commit();
+            }
+        });
 
 
         return root;
@@ -186,12 +195,12 @@ public class HomeFragment extends Fragment implements DaftarBarang.OnItemClickLi
     public void onItemClick(int position) {
         Toast.makeText(getContext(), "Normal click at position: " + position, Toast.LENGTH_SHORT).show();
         Barang selectedItem = Barangs.get(position);
-        KasirActivity.referenceKeyBarang = selectedItem.getKey();
+        MainActivity.referenceKeyBarang = selectedItem.getKey();
 
-        KasirActivity.namaBarang = selectedItem.getNamaBarang();
-        KasirActivity.hargabarang = selectedItem.getHargaBarang();
-        KasirActivity.jumlahbarang = selectedItem.getJumlahBarang();
-        KasirActivity.gambar = selectedItem.getGambarBarang();
+        MainActivity.namaBarang = selectedItem.getNamaBarang();
+        MainActivity.hargabarang = selectedItem.getHargaBarang();
+        MainActivity.jumlahbarang = selectedItem.getJumlahBarang();
+        MainActivity.gambar = selectedItem.getGambarBarang();
 
         AppCompatActivity activity = (AppCompatActivity) getContext();
         Fragment myFragment = new DetailProdukFragment();
@@ -211,12 +220,12 @@ public class HomeFragment extends Fragment implements DaftarBarang.OnItemClickLi
     public void onItemClickAksesoris(int position) {
 
         BarangAksesoris selectedItem1 = BarangAksesoriss.get(position);
-        KasirActivity.referenceKeyBarang = selectedItem1.getKey();
+        MainActivity.referenceKeyBarang = selectedItem1.getKey();
 
-        KasirActivity.namaBarang = selectedItem1.getNamaBarang();
-        KasirActivity.hargabarang = selectedItem1.getHargaBarang();
-        KasirActivity.jumlahbarang = selectedItem1.getJumlahBarang();
-        KasirActivity.gambar = selectedItem1.getGambarBarang();
+        MainActivity.namaBarang = selectedItem1.getNamaBarang();
+        MainActivity.hargabarang = selectedItem1.getHargaBarang();
+        MainActivity.jumlahbarang = selectedItem1.getJumlahBarang();
+        MainActivity.gambar = selectedItem1.getGambarBarang();
 
         AppCompatActivity activity = (AppCompatActivity) getContext();
         Fragment myFragment = new DetailProdukFragment();

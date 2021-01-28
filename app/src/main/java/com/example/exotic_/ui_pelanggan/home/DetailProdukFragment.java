@@ -18,6 +18,7 @@ import com.example.exotic_.model.Akun;
 import com.example.exotic_.model.Keranjang;
 import com.example.exotic_.ui_kasir.KasirActivity;
 import com.example.exotic_.ui_kasir.akun.NotificationsViewModel;
+import com.example.exotic_.ui_pelanggan.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -49,10 +50,10 @@ public class DetailProdukFragment extends Fragment {
         Harga= root.findViewById(R.id.txHargaBarangK);
         Jumlah= root.findViewById(R.id.txNJumlahBarangK);
 
-                image=KasirActivity.gambar;
-                NamaBarang.setText(KasirActivity.namaBarang);
-                Harga.setText(KasirActivity.hargabarang);
-                Jumlah.setText(KasirActivity.jumlahbarang);
+                image= MainActivity.gambar;
+                NamaBarang.setText(MainActivity.namaBarang);
+                Harga.setText(MainActivity.hargabarang);
+                Jumlah.setText(MainActivity.jumlahbarang);
                 Picasso.get()
                         .load(image)
                         .placeholder(R.drawable.spk1)
@@ -109,7 +110,7 @@ public class DetailProdukFragment extends Fragment {
                         Harga.getText().toString().trim(),
                         image);
                 //String uploadId = mDatabaseRef.push().getKey();
-                mDatabaseRefKeranjang.setValue(data);
+                mDatabaseRefKeranjang.child(uid+"/"+MainActivity.referenceKeyBarang).setValue(data);
                 Toast.makeText(getContext(), "Simpan successful", Toast.LENGTH_LONG).show();
             }
         });

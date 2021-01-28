@@ -14,6 +14,18 @@ import androidx.navigation.ui.NavigationUI;
 public class MainActivity extends AppCompatActivity {
 
     public static String Jenis;
+    public static String
+            referenceKeyBarang,
+            gambar=null,
+            namaBarang=null,
+            jumlahbarang=null,
+            hargabarang=null;
+    public static String
+    refKeyBarang=null,
+    namaPelanggan=null,
+    nohp=null,
+    alamatPelanggan=null,
+    totalBayar=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

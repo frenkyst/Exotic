@@ -18,6 +18,7 @@
         app:menu="@menu/pelanggan_bottom_nav_menu" />
 
     <fragment
+        android:background="?android:attr/windowBackground"
         android:id="@+id/nav_host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
