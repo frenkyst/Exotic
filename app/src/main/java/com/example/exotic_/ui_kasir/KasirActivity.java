@@ -13,6 +13,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class KasirActivity extends AppCompatActivity {
 
+    public static String
+            referenceKeyBarang=null,
+            gambar=null,
+            namaBarang=null,
+    jenisBarang=null,
+            jumlahbarang=null,
+            hargabarang=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
